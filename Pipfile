@@ -6,8 +6,10 @@ name = "pypi"
 [packages]
 django = "*"
 wheel = "*"
-
-"psycopg2-binary" = "*"
+whitenoise = "*"
+gunicorn = "*"
+django-heroku = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 
