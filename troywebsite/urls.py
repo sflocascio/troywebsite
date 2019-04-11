@@ -20,4 +20,6 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
+    path('blog/', views.blog, name='blog'),
+    
 ]
