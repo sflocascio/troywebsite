@@ -6,7 +6,7 @@ from core.models import AboutSection
 
 class AboutSectionAdmin(admin.ModelAdmin):
     model = AboutSection
-    list_display = ("title", "subtitle", "subheading", "body")
+    list_display = ("title", "subheading", "body", "image")
 
 
 
