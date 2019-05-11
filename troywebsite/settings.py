@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6swwkz(5((95cqw2ybz1d1f6!9b(34(f&^)(9=+g5jw95@4hrp'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -139,16 +139,7 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-#Sendgrid Settings 
-SEND_GRID_API_KEY = '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'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'sflocascio'
-EMAIL_HOST_PASSWORD = '1161988sf4'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'sflocascio01@gmail.com'
-ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact Email Received from website'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 
 
