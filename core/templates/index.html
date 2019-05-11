@@ -275,26 +275,29 @@
                 <div class="col-12">
                     <!-- Contact Form Area -->
                     <div class="contact-form-area">
-                        <form action="#" method="post">
+
+
+                        <form action="." method="post">
+                                {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6 col-lg-4">
                                     <div class="form-group wow fadeInUp" data-wow-delay="100ms">
-                                        <input type="text" class="form-control" id="name" placeholder="Name">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-4">
                                     <div class="form-group wow fadeInUp" data-wow-delay="200ms">
-                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                {% comment %} <div class="col-lg-4">
                                     <div class="form-group wow fadeInUp" data-wow-delay="300ms">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                                 <div class="col-12">
                                     <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                        <textarea name="message" class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
@@ -302,6 +305,8 @@
                                 </div>
                             </div>
                         </form>
+
+
                     </div>
                 </div>
             </div>
