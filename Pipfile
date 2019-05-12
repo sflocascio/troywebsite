@@ -14,6 +14,7 @@ django-debug-toolbar = "*"
 "psycopg2" = "*"
 pillow = "*"
 python-decouple = "*"
+"django-tinymce4-lite" = "*"
 
 [dev-packages]
 

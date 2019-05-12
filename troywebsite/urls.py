@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
 from . import settings
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('blog1/', views.blogpost, name='blogpost'),
     path('contact/', views.contact, name='contact'),
+    url(r'^tinymce/', include('tinymce.urls')),
 
 ]+ static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

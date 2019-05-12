@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import get_template
-from core.models import AboutSection
+from core.models import AboutSection, Post
 
 # Create your views here.
 def index (request):
     about = AboutSection.objects.all()
+    
+
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
@@ -35,10 +37,15 @@ def index (request):
 
     return render(request, 'index.html', {
         "about": about,
+        
     })
 
 def blog (request):
-    return render(request, 'blog.html')
+    post = Post.objects.all()
+    return render(request, 'blog.html', {
+        "post": post, 
+    })
+    
 
 def blogpost (request):
     return render(request, 'blogpage.html')
