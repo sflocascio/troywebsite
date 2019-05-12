@@ -14,8 +14,18 @@
 
 /* Sams Classes  */
 
+.spgray{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%); 
+}
+
 .spfont{
   color: #ffffff
+}
+
+.scroll {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .spinline{
@@ -31,6 +41,8 @@ text-align: justify;
   padding-top: 30px;
   padding-bottom: 34px;
 }
+
+/* end Sams Classes 
 
 * {
   margin: 0;

@@ -5,8 +5,14 @@
 
 {% block content %}
 
+<style type="text/css">
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
     <!-- ##### Hero Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(https://soma.edu.sg/wp-content/uploads/2017/05/Electronic-Music-Production1.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay " style="background-image: url(https://soma.edu.sg/wp-content/uploads/2017/05/Electronic-Music-Production1.jpg);">
         
     </section>
     <!-- ##### Hero Area End ##### -->
@@ -25,28 +31,28 @@
                                     
                                 <br>
                                 <br>
-                                <h2 class="#">Troy Dixon Mastering </h2>
-                                <p class="#####">East Nashville Mastering at an excellent valiue and price </p>
+                                <h2 class="#">TD Mastering </h2>
+                                <p class="#####">Experienced Audio Engineering Services </p>
                                 <br>
                                 
                                         
                                 <!-- <p class="spinline">We feel that our services are the best around, but experience and creativity is also essential when working as an audio engineer. Our chief engineer has been playing, engineering, producing, and mastering audio for over 18 years. His attention to detail and passion for audio fidelity is evident in every project. Whether in our local studio or online, our clients are included in every step of their project. Read more about our engineers.</p> -->
                                 {% for about in about %}
                                 <div class="#"> 
-                                        <img class="spinline" width="200px" src="{{ about.image.url }}" alt="">   
+                                        <img class="spinline" width="300px" src="{{ about.image.url }}" alt="">   
                                         {% comment %} <img class="spinline" width="200px"src="static/img/bg-img/b4.jpg" alt="">     {% endcomment %}
                                         <h4 class="#">About </h4> 
                                 {% endfor %}   
-                                <h3 class="#">We feel that our services are the best around, but experience and creativity is also essential when working as an audio engineer. 
-                                    Our chief engineer has been playing, engineering, producing, 
-                                    and mastering audio for over 18 years.Our chief engineer has been playing, engineering, 
-                                    producing, and mastering audio for over 18 years. creativity is also essential 
-                                    when working as an audio engineer. Our chief engineer has been playing, engineering, 
-                                    producing, and mastering audio for over 18 years.Our chief engineer has been playing, engineering, producing, a
-                                    nd mastering audio for over 18 years when working as an audio engineer. Our chief engineer has been playing, engineering, 
-                                    producing, and mastering audio for over 18 years.Our chief engineer has been playing, engineering, producing, a
-                                    nd mastering audio for over 18 year audio for over 18 years.Our chief engineer has been playing, engineering, producing, a
-                                    nd mastering audio for over 18 year</h3>
+                                <h3 class="#">Troy Dixon is a Nashville-based audio engineer 
+                                specialized in mixing and mastering. Dixon has over a decade of experience in 
+                                the recording industry. His career began in Los Angeles working with hip 
+                                hop/rap mix engineer Dave Aron. Working with Mr. Aron was formative for 
+                                Dixon in learning how to build mixes with power and clarity. In LA, Dixon 
+                                worked with many diverse acts ranging from dub reggae pioneer The Scientist 
+                                to influential alternative-rock band Jane’s Addiction. 
+                                Dixon now calls Nashville home and is focused on creating the best 
+                                sounding mixes and masters possible.</h3>
+
                                 <!-- <h4 class="#">The Space </h4>  
                                 <h3 class="#">We feel that our services are the best around, but experience and creativity is also essential when working as an audio engineer. Our chief engineer has been playing, engineering, producing, and mastering audio for over 18 years. but experience and creativity is also essential when working as an audio engineer. Our chief engineer has been playing, engineering, producing, and mastering audio for over 18 years</h3> -->
                             </div>  
@@ -214,10 +220,11 @@
                     <!-- Section Heading -->
                     <div class="section-heading white text-left mb-30">
                         
-                        <h2>The Space </h2>
+                        <h2 >The Space </h2>
                     </div>
 
-                    <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros</p>
+                    <h3 class="spfont">The Golden Ratio is the guiding principle behind the dimensions and design of Dixon’s mastering studio. These dimensions allow for a natural, non-resonant, acoustic environment ideal for precise audio playback. Owens Corning 703 acoustic insulation is incorporated in floor to ceiling bass traps and side wall absorption and is presented in FR701 acoustic fabric from Guilford of Maine.</h3>
+                    <br>
                     
                 </div>
             </div>
@@ -226,7 +233,7 @@
         <div class="row align-items-end">
                 <div class="col-12 col-md-5 col-lg-4">
                     <div class="featured-artist-thumb">
-                        <img src="https://images.unsplash.com/photo-1535406208535-1429839cfd13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80" alt="">
+                        <img width = "100%" src="https://images.unsplash.com/photo-1535406208535-1429839cfd13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-md-7 col-lg-8">
@@ -236,7 +243,14 @@
                             
                             <h2>The Gear </h2>
                         </div>
-                        <p>Nam tristique ex vel magna tincidunt, ut porta nisl finibus. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros. Vivamus eu dolor eu quam varius rutrum. Fusce nec justo id sem aliquam fringilla nec non lacus. Suspendisse eget lobortis nisi, ac cursus odio. Vivamus nibh velit, rutrum at ipsum ac, dignissim iaculis ante. Donec in velit non elit pulvinar pellentesque et non eros</p>
+                        <h3 class="spfont">A set of Tyler Acoustics D1X reference monitors, 
+                        powered by a solid-state Bryston 4BST, fill the studio with full frequency playback. 
+                        A secondary set of Wharfedale Valdus 500 monitors with Hafler amplification provide 
+                        an additional point of reference. The monitoring chain relies on high resolution digital
+                         to analog conversion which is performed by the benchmark Crane Song Avocet II converter 
+                         system. The highest quality audio processing is accomplished using software from iZotope,
+                          Universal Audio, HOFA, FabFilter, and others.  </h3>
+                        
                         
                     </div>
                 </div>
@@ -246,18 +260,8 @@
 {% comment %} </section> {% endcomment %}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<scroll-container>
+ <scroll-page id="module"></scroll-page>
     
     <!-- ##### Contact Area Start ##### -->
     <section class="contact-area section-padding-100 ">
@@ -265,7 +269,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading wow fadeInUp" data-wow-delay="100ms">
-                        <p> have any questions or specific needs? I work with all kinds of styles and would love to talk to you more about how my skills might benefit your specific project!</p>
+                        <p> Questions? Request a free mastering sample and discuss your project by using the form below!</p>
                         <h2>Get In Touch</h2>
                     </div>
                 </div>
@@ -290,11 +294,11 @@
                                         <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
                                     </div>
                                 </div>
-                                {% comment %} <div class="col-lg-4">
+                                <div class="col-lg-4">
                                     <div class="form-group wow fadeInUp" data-wow-delay="300ms">
                                         <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                     </div>
-                                </div> {% endcomment %}
+                                </div> 
                                 <div class="col-12">
                                     <div class="form-group wow fadeInUp" data-wow-delay="400ms">
                                         <textarea name="message" class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
@@ -312,6 +316,7 @@
             </div>
         </div>
     </section>
+    </scroll-container>
     <!-- ##### Contact Area End ##### -->
 
     

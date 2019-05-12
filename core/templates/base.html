@@ -23,6 +23,12 @@
 {% endblock header %}
 </head>
 
+<style type="text/css">
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
 <body>
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
@@ -44,7 +50,8 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="#"><img width="50%" src="static/img/core-img/logo1.png" alt=""></a>
+                        <a href="index.html" class="#"><img width="25%"  src="static/img/core-img/td1.png" alt=""></a>
+                        {% comment %} <a href="index.html" class="#"><img width="50%" src="https://photos.google.com/photo/AF1QipN1Q8YjcxPoHJowTBkg-85wcpd--NnoetPk5J7s" alt=""/></a> {% endcomment %}
                         
                         
 
@@ -63,7 +70,7 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                <!-- <ul>
+                                {% comment %} <!-- <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a  href="{% url 'blog' %}" >BLOG</a></li>
                                     <li><a href="#">Pages</a>
@@ -97,16 +104,17 @@
                                     <li><a href="event.html">Events</a></li>
                                     <li><a href="blog.html">News</a></li>
                                     <li><a href="contact.html">Contact</a></li>
-                                </ul> -->
+                                </ul> --> {% endcomment %}
 
                                 <!-- Login/Register & Cart Button -->
-                                <div class="login-register-cart-button d-flex align-items-center">
+                                <div class="login-register-cart-button spinline">
                                     <!-- Login/Register -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="{% url 'home' %}" id="loginBtn"> Home &nbsp;&nbsp;&nbsp; </a>
-                                       
-                                        <a href="{% url 'blog' %}" id="loginBtn"> Blog &nbsp;&nbsp;&nbsp;</a>
-                                        <a href="{% url 'contact' %}" id="loginBtn"> Contact &nbsp;&nbsp;&nbsp;</a>
+                                    <div class="login-register-btn mr-30">
+                                    
+                                        <a href="{% url 'home' %}" id="loginBtn"> Home  </a>
+                                        <a href="{% url 'blog' %}" id="loginBtn"> Blog  </a>
+                                        <a class="scroll" href="#module" title="Home"> Contact </a>
+                                        
                                     </div>
 
                                     <!-- Cart Button -->
@@ -123,6 +131,8 @@
             </div>
         </div>
     </header>
+
+    
 
 
 {% block content %}{% endblock content %}
