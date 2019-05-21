@@ -30,6 +30,12 @@
   </style>
 
 <body>
+
+ <!-- ##### Hero Area Start ##### -->
+
+ 
+   
+    <!-- ##### Hero Area End ##### -->
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="lds-ellipsis">
@@ -39,6 +45,7 @@
             <div></div>
         </div>
     </div>
+
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
@@ -50,8 +57,10 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="#"><img width="35%"  src="static/img/core-img/td1.png" alt=""></a>
-                        {% comment %} <a href="index.html" class="#"><img width="50%" src="https://photos.google.com/photo/AF1QipN1Q8YjcxPoHJowTBkg-85wcpd--NnoetPk5J7s" alt=""/></a> {% endcomment %}
+                         
+                        <a href="{% url 'home' %}" id="loginBtn"> <img width="50%"  src="/static/img/core-img/logo1.png" alt=""> </a>   
+
+                        {% comment %} <a href="index.html" class="#"><img width="50%" src="https://photos.google.com/photo/AF1QipNuPFk_WAVsHCCi-JhuH8HUOZ3t4xG9A6JhfMhj" alt=""></a>   {% endcomment %}
                         
                         
 
@@ -70,8 +79,9 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                {% comment %} <!-- <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                <ul>
+                                <li><a  href="{% url 'blog' %}" >BLOG</a></li>
+                                    {% comment %} <li><a href="index.html">Home</a></li>
                                     <li><a  href="{% url 'blog' %}" >BLOG</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
@@ -100,14 +110,14 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li><a href="event.html">Events</a></li>
-                                    <li><a href="blog.html">News</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul> --> {% endcomment %}
+                                    </li> {% endcomment %}
+                                    <li><a href="{% url 'home' %}" id="loginBtn">Home</a></li>
+                                    <li><a href="{% url 'blog' %}" id="loginBtn">News</a></li>
+                                    {% comment %} <li><a class="scroll" href="#module" >Contact</a></li> {% endcomment %}
+                                </ul>
 
                                 <!-- Login/Register & Cart Button -->
-                                <div class="login-register-cart-button spinline">
+                                {% comment %} <div class="login-register-cart-button spinline">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-30">
                                     
@@ -115,7 +125,7 @@
                                         <a href="{% url 'blog' %}" id="loginBtn"> Blog  </a>
                                         <a class="scroll" href="#module" title="Home"> Contact </a>
                                         
-                                    </div>
+                                    </div> {% endcomment %}
 
                                     <!-- Cart Button -->
                                     <!-- <div class="cart-btn">
@@ -132,10 +142,10 @@
         </div>
     </header>
 
-    
+  
 
 
-{% block content %}{% endblock content %}
+{% block content %}{% endblock content %} 
 
 {% block footer %}{% endblock footer %} 
 

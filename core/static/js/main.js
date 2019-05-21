@@ -14,15 +14,8 @@ window.onload = function() {
 $(function(){
     $("audio").on("play", function() {
         $("audio").not(this).each(function(index, audio) {
-            
-            
-            
-
-
             audio.pause();
-            audio.currentTime = 0;
-           
-            
+            audio.currentTime = 0;  
         });
     });
 });

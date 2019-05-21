@@ -19,6 +19,14 @@
     filter: grayscale(100%); 
 }
 
+.spopaq{
+  opacity: 0.5;
+}
+.right{
+  float: right;
+  position: absolute;
+}
+
 .spfont{
   color: #ffffff
 }
@@ -539,10 +547,12 @@ img {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .breakpoint-on .classy-navbar .classy-menu {
-    background-color: #000000; } }
+    background-color: #000000;
+  opacity: 0.9; } }
 @media only screen and (max-width: 767px) {
   .breakpoint-on .classy-navbar .classy-menu {
-    background-color: #000000; } }
+    background-color: #303030;
+    opacity: 0.9; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .classynav ul li .megamenu .single-mega.cn-col-4 {
@@ -1282,13 +1292,15 @@ img {
       height: 270px; } }
   .breadcumb-area .bradcumbContent {
     position: absolute;
-    background-color: #fff;
+    background-color: rgb(228, 219, 219);
+    opacity: 0.8;
     width: 552px;
     bottom: 0;
     left: 50%;
     z-index: 100;
     text-align: center;
     padding-top: 40px;
+    padding-bottom: 20px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
     @media only screen and (max-width: 767px) {
