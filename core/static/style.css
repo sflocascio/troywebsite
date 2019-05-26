@@ -19,6 +19,9 @@
     filter: grayscale(100%); 
 }
 
+.spcenter{
+  text-align: center;
+}
 .spopaq{
   opacity: 0.5;
 }
@@ -93,7 +96,7 @@ a:focus {
   transition-duration: 500ms;
   text-decoration: none;
   outline: 0 solid transparent;
-  color: #000000;
+  color: #5f5f5f;
   font-weight: 700;
   font-size: 16px;
   font-family: "Archivo Narrow", sans-serif; }

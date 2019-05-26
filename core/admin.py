@@ -11,6 +11,8 @@ class AboutSectionAdmin(admin.ModelAdmin):
 
 class PostSectionAdmin(admin.ModelAdmin):
     model = Post
+    
+    
 
 admin.site.register(AboutSection, AboutSectionAdmin)
 
