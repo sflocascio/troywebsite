@@ -19,6 +19,10 @@
     filter: grayscale(100%); 
 }
 
+.spback{
+  background-color: #0000000d;
+}
+
 .spcenter{
   text-align: center;
 }
@@ -32,6 +36,10 @@
 
 .spfont{
   color: #ffffff
+}
+
+.spfont2{
+  color: #000000
 }
 
 .scroll {

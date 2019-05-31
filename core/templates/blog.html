@@ -31,7 +31,7 @@
                         <!-- Post Thumb -->
                         <div class="blog-post-thumb mt-30">
                             {% comment %} <a href="{% url 'blogpost' %}"><img  width='100%'src="https://www.bonnersmusic.co.uk/img/pro-audio-mixers-yamaha-mixers.jpg" alt=""></a> {% endcomment %}
-                            <a href="{% url 'blogpost' %}"><img  width='100%' src="{{ post.image.url }}" alt=""></a>
+                            <a href="{% url 'blog_detail' slug=post.slug %}"><img  width='100%' src="{{ post.image.url }}" alt=""></a>
                             <!-- Post Date -->
                             <div class="post-date">
                                 <span> {{post.date}} </span>

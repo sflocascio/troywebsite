@@ -29,9 +29,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
     path('blog/', views.blog, name='blog'),
-    path('blog1/', views.blogpost, name='blogpost'),
     path('contact/', views.contact, name='contact'),
     url(r'^tinymce/', include('tinymce.urls')),
+    path('blog/<slug>/', views.blog_detail, name='blog_detail'),
 
 ]+ static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
