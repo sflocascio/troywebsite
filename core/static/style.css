@@ -23,6 +23,15 @@
   background-color: #0000000d;
 }
 
+.pre-scrollable {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.spsize{
+  font-size: 30px;
+}
+
 .spcenter{
   text-align: center;
 }

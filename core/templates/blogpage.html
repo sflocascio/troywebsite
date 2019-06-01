@@ -8,19 +8,25 @@
 
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(https://www.patchwerk.com/images/studios/995/995slides/995-slide-5.jpg);">
-        <div class="bradcumbContent">
-            {% comment %} <p>See what’s new</p> {% endcomment %}
+        {% comment %} <div class="bradcumbContent">
+            <p>{{post.title}}</p>
             <h2>RECENTLY</h2>
-        </div>
+        </div> {% endcomment %}
     </section>
+    <br>
+    <br>
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Blog Area Start ##### -->
-    <div class="blog-area section-padding-100">
+    <div class="blog-area ">
+
+    <a href="{% url 'blog' %}" class="#"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <i class="fas fa-chevron-left"> </i> Back </a>
+
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-9">
-
                     <!-- Single Post Start -->
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
@@ -50,6 +56,10 @@
                             <p> {{post.content|safe }}</p>
                         </div>
                     </div>
+                    <ul class="spcenter ">
+                            <a href="{% url 'blog' %}" class="#"> 
+                            <i class="fas fa-chevron-left"> </i> Back </a>  
+                    </ul>
 
                     
 
@@ -65,17 +75,54 @@
                     </div> {% endcomment %}
                 </div>
 
-                <div class="col-12 col-lg-3">
+               <div class="col-12 col-lg-3">
                     <div class="blog-sidebar-area">
 
                         <!-- Widget Area -->
-                       
-
-                        <!-- Widget Area -->
-                      
-
-                        <!-- Widget Area -->
                         <div class="single-widget-area mb-30">
+                            <div class="widget-title">
+                                <h5>Archive</h5>
+                            </div>
+                            <div class="widget-content pre-scrollable">
+                                <ul>
+                                {% for post in posts %}
+                                            
+                                         <span> <a href="{% url 'blog_detail' slug=post.slug %}">{{post.title}} &nbsp;&nbsp;&nbsp;&nbsp; </a></span>
+                                         
+                                        <span> {{post.month}} {{post.date}} ‘{{post.year}} </span>
+                                        
+                                        <br>
+                                         <br>
+                                        
+                                        {% comment %} <span> <a>{{post.title}} </a> </span> {% endcomment %}
+
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <h5>My Latest Projects</h5>
+
+                        <!-- Widget Area -->
+                        {% comment %} <div class="single-widget-area mb-30">
+                            <div class="widget-title">
+                                <h5>Featured</h5>
+                            </div>
+                           <div class="widget-content"> 
+                            <div class="single-widget-area mb-30">
+                            <a href="#"><img src="https://dannydiamond.ie/wp-content/uploads/SMC-300x300.jpg" alt=""></a>
+                        </div> {% endcomment %}
+                                {% comment %} <ul>
+                                    <li><a href="#">February 2018</a></li>
+                                    <li><a href="#">March 2018</a></li>
+                                    <li><a href="#">April 2018</a></li>
+                                    <li><a href="#">May 2018</a></li>
+                                    <li><a href="#">June 2018</a></li>
+                                </ul> {% endcomment %}
+                            {% comment %} </div> 
+                        </div> {% endcomment %}
+
+                        <!-- Widget Area -->
+                        {% comment %} <div class="single-widget-area mb-30">
                             <div class="widget-title">
                                 <h5>Tags</h5>
                             </div>
@@ -91,17 +138,25 @@
                                     <li><a href="#">performers</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
 
                         <!-- Widget Area -->
-                        <div class="single-widget-area mb-30">
-                            <a href="#"><img src="https://dannydiamond.ie/wp-content/uploads/SMC-300x300.jpg" alt=""></a>
-                        </div>
+                        {% for project in project%}
+                             {% if project.image %}
+                                <div class="single-widget-area mb-30">
+                                    <a href="#"><img src="{{project.image.url}}" alt=""></a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
 
                         <!-- Widget Area -->
-                        <div class="single-widget-area mb-30">
-                            <a href="#"><img src="https://dannydiamond.ie/wp-content/uploads/SMC-300x300.jpg" alt=""></a>
+                        {% comment %} <div class="single-widget-area mb-30">
+                            <a href="#"><img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/12/attachment_68585523.jpg?auto=format&q=60&fit=max&w=930" alt=""></a>
                         </div>
+
+                        <div class="single-widget-area mb-30">
+                            <a href="#"><img src="http://papers.co/wallpaper/papers.co-am19-tycho-art-music-album-cover-illust-simple-white-40-wallpaper.jpg?download=true" alt=""></a>
+                        </div> {% endcomment %}
 
                     </div>
                 </div>

@@ -26,6 +26,11 @@ class Post(models.Model):
         return self.title
 
 
+class Projects(models.Model):
+    title = models.CharField(max_length=255, null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+    image = models.ImageField(upload_to='test_image', blank=True)
+
 
 
  

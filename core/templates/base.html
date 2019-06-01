@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <!-- Title -->
     {% block title %}
             <title>Troy Dixon Mastering</title>
@@ -142,6 +144,15 @@
         </div>
     </header>
 
+                            {% if messages %}
+						{% for message in messages %}
+                                    <div class="notification ">
+                                        <button class="delete"></button>
+                                        {{ message }}
+                                        </div>
+
+							{% endfor %}
+						{% endif %}
   
 
 
@@ -215,7 +226,7 @@
                 <div class="col-12 col-md-6">
                     <!-- <a href="#"><img src="static/img/core-img/logo1.png" alt=""></a> -->
                     <p class="#"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+{% comment %} Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> {% endcomment %}
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
 
