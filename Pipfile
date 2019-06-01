@@ -13,6 +13,10 @@ django-debug-toolbar = "*"
 "psycopg2-binary" = "*"
 "psycopg2" = "*"
 pillow = "*"
+python-decouple = "*"
+"django-tinymce4-lite" = "*"
+django-el-pagination = "*"
+django-autoslug = "*"
 
 [dev-packages]
 

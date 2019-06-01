@@ -1,35 +1,43 @@
 {% extends 'base.html' %} 
+{% load el_pagination_tags %}
 {% block title %}
- {{ block.super }} 
+    {{ block.super }} 
 {% endblock title %}
+
+
 
 {% block content %}
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(https://www.patchwerk.com/images/studios/995/995slides/995-slide-5.jpg);">
+    <section class="breadcumb-area bg-img " style="background-image: url(https://static1.squarespace.com/static/5457a5dee4b0e274ee27d285/t/5bc78a480d9297d66e346928/1539804549581/Mixing.jpg)">
         <div class="bradcumbContent">
             {% comment %} <p>See what’s new</p> {% endcomment %}
             <h2>RECENTLY</h2>
         </div>
     </section>
+    <br>
+    <br>
     <!-- ##### Breadcumb Area End ##### -->
-
+ 
     <!-- ##### Blog Area Start ##### -->
-    <div class="blog-area section-padding-100">
+    <div class="blog-area">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-9">
 
                     <!-- Single Post Start -->
+                    {% paginate 3 post %}
+                    {% for post in post %}
                     <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Post Thumb -->
                         <div class="blog-post-thumb mt-30">
-                            <a href="{% url 'blogpost' %}"><img  width='100%'src="https://www.bonnersmusic.co.uk/img/pro-audio-mixers-yamaha-mixers.jpg" alt=""></a>
+                            {% comment %} <a href="{% url 'blogpost' %}"><img  width='100%'src="https://www.bonnersmusic.co.uk/img/pro-audio-mixers-yamaha-mixers.jpg" alt=""></a> {% endcomment %}
+                            <a href="{% url 'blog_detail' slug=post.slug %}"><img  width='100%' src="{{ post.image.url }}" alt=""></a>
                             <!-- Post Date -->
                             <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
+                                <span> {{post.date}} </span>
+                                <span> {{post.month}} ‘{{post.year}}</span>
                             </div>
                         </div>
 
@@ -37,82 +45,39 @@
                         <div class="blog-content">
                             <!-- Post Title -->
                             
-                            <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
+                            <a href="#" class="post-title"> {{ post.title }} </a>
                             <!-- Post Meta -->
                            
                             <div class="post-meta d-flex mb-30">
                             
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
+                                <p class="post-author">By<a href="#"> Troy Dixon </a></p>
+                                <p class="tags">in<a href="#"> Recently </a></p>
+                                
                             </div>
                             <!-- Post Excerpt -->
-                            <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
+                            <p> {{post.content|safe|truncatewords:200  }} </p>
+                            <br>
+                           <a href="{% url 'blog_detail' slug=post.slug %}" class="#"> Keep Reading  <i class="fas fa-chevron-right"> </i> </a>
                         </div>
+                        
                     </div>
+                    {% endfor %}
+
+                    
+
+                    <!-- deleted harcoded post  -->
 
                     <!-- Single Post Start -->
-                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
-                        <!-- Post Thumb -->
-                        <div class="blog-post-thumb mt-30">
-                            <a href="{% url 'blogpost' %}"><img  width='100%'src="http://rajeshrecordingstudio.com/wp-content/uploads/2018/08/1.png" alt=""></a>
-                            <!-- Post Date -->
-                            <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
-                            </div>
-                        </div>
-
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <!-- Post Title -->
-                            <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
-                            </div>
-                            <!-- Post Excerpt -->
-                            <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Post Start -->
-                    <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
-                        <!-- Post Thumb -->
-                        <div class="blog-post-thumb mt-30">
-                            <a href="{% url 'blogpost' %}"><img  width='100%'src="https://www.bonnersmusic.co.uk/img/pro-audio-mixers-yamaha-mixers.jpg" alt=""></a>
-                            
-                            <!-- Post Date -->
-                            <div class="post-date">
-                                <span>15</span>
-                                <span>June ‘18</span>
-                            </div>
-                        </div>
-
-                        <!-- Blog Content -->
-                        <div class="blog-content">
-                            <!-- Post Title -->
-                            <a href="#" class="post-title">5 Festivals you shouldn’t miss this summer</a>
-                            <!-- Post Meta -->
-                            <div class="post-meta d-flex mb-30">
-                                <p class="post-author">By<a href="#"> Admin</a></p>
-                                <p class="tags">in<a href="#"> Events</a></p>
-                                <p class="tags"><a href="#">2 Comments</a></p>
-                            </div>
-                            <!-- Post Excerpt -->
-                            <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis.</p>
-                        </div>
-                    </div>
+                    
 
                     <!-- Pagination -->
                     <div class="oneMusic-pagination-area wow fadeInUp" data-wow-delay="300ms">
                         <nav>
-                            <ul class="pagination">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                            <ul class="spcenter spsize">
+
+                                    <h1 class="spsize"> {% show_pages %} </h1> 
+                                
+                                
                             </ul>
                         </nav>
                     </div>
@@ -124,37 +89,48 @@
                         <!-- Widget Area -->
                         <div class="single-widget-area mb-30">
                             <div class="widget-title">
-                                <h5>Categories</h5>
+                                <h5>Archive</h5>
                             </div>
-                            <div class="widget-content">
+                            <div class="widget-content pre-scrollable">
                                 <ul>
-                                    <li><a href="#">Music</a></li>
-                                    <li><a href="#">Events &amp; Press</a></li>
-                                    <li><a href="#">Festivals</a></li>
-                                    <li><a href="#">Lyfestyle</a></li>
-                                    <li><a href="#">Uncategorized</a></li>
+                                {% for post in posts %}
+                                            
+                                         <span> <a href="{% url 'blog_detail' slug=post.slug %}">{{post.title}} &nbsp;&nbsp;&nbsp;&nbsp; </a></span>
+                                         
+                                        <span class="post-author"> {{post.month}} {{post.date}} ‘{{post.year}} </span>
+                                        
+                                        <br>
+                                         <br>
+                                        
+                                        {% comment %} <span> <a>{{post.title}} </a> </span> {% endcomment %}
+
+                                {% endfor %}
                                 </ul>
                             </div>
                         </div>
+                        <h5>My Latest Projects</h5>
 
                         <!-- Widget Area -->
-                        <div class="single-widget-area mb-30">
+                        {% comment %} <div class="single-widget-area mb-30">
                             <div class="widget-title">
-                                <h5>Archive</h5>
+                                <h5>Featured</h5>
                             </div>
-                            <div class="widget-content">
-                                <ul>
+                           <div class="widget-content"> 
+                            <div class="single-widget-area mb-30">
+                            <a href="#"><img src="https://dannydiamond.ie/wp-content/uploads/SMC-300x300.jpg" alt=""></a>
+                        </div> {% endcomment %}
+                                {% comment %} <ul>
                                     <li><a href="#">February 2018</a></li>
                                     <li><a href="#">March 2018</a></li>
                                     <li><a href="#">April 2018</a></li>
                                     <li><a href="#">May 2018</a></li>
                                     <li><a href="#">June 2018</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                                </ul> {% endcomment %}
+                            {% comment %} </div> 
+                        </div> {% endcomment %}
 
                         <!-- Widget Area -->
-                        <div class="single-widget-area mb-30">
+                        {% comment %} <div class="single-widget-area mb-30">
                             <div class="widget-title">
                                 <h5>Tags</h5>
                             </div>
@@ -170,17 +146,26 @@
                                     <li><a href="#">performers</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
 
                         <!-- Widget Area -->
-                        <div class="single-widget-area mb-30">
-                            <a href="#"><img src="https://dannydiamond.ie/wp-content/uploads/SMC-300x300.jpg" alt=""></a>
-                        </div>
+
+                        {% for project in project%}
+                             {% if project.image %}
+                                <div class="single-widget-area mb-30">
+                                    <a href="{{project.link}}" target="blank"><img src="{{project.image.url}}" alt=""></a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
 
                         <!-- Widget Area -->
-                        <div class="single-widget-area mb-30">
-                            <a href="#"><img src="https://dannydiamond.ie/wp-content/uploads/SMC-300x300.jpg" alt=""></a>
+                        {% comment %} <div class="single-widget-area mb-30">
+                            <a href="#"><img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/12/attachment_68585523.jpg?auto=format&q=60&fit=max&w=930" alt=""></a>
                         </div>
+
+                        <div class="single-widget-area mb-30">
+                            <a href="#"><img src="http://papers.co/wallpaper/papers.co-am19-tycho-art-music-album-cover-illust-simple-white-40-wallpaper.jpg?download=true" alt=""></a>
+                        </div> {% endcomment %}
 
                     </div>
                 </div>
