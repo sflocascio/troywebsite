@@ -28,7 +28,9 @@ TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'SECRET_KEY'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -155,6 +157,7 @@ STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 #WhiteNoise Static Storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
 #Sendgrid Settings 
 SEND_GRID_API_KEY = config('API_KEY')
 EMAIL_HOST = 'smtp.sendgrid.net'
@@ -202,6 +205,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'statusbar': True,
     }
 #End Tiny MCE Settings 
+
 
 
 

@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.mail import send_mail
@@ -5,9 +6,14 @@ from django.template.loader import get_template
 from core.models import AboutSection, Post, Projects
 from django.contrib import messages
 
+from django.shortcuts import render
+from core.models import AboutSection
+
+
 # Create your views here.
 def index (request):
     about = AboutSection.objects.all()
+
     
 
     if request.method == "POST":
@@ -35,6 +41,7 @@ def index (request):
         send_mail(subject, contact_message, from_email, to_email, fail_silently=True)
         messages.success(request, "Thanks for your email, I'll be in touch with you soon! -Troy   ")
         return redirect('home')
+
 
     return render(request, 'index.html', {
         "about": about,
