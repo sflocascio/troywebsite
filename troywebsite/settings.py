@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'core',
     'tinymce',
     'autoslug',
+    'storages',
     
 ]
 
@@ -62,7 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',#for Whitenoise 
 ]
 
 ROOT_URLCONF = 'troywebsite.urls'
@@ -139,10 +140,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'troywebsite/media/test_image')
+#Original MEdia settings belw
+#MEDIA_URL = '/media/'
+
+
+
+
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
@@ -155,8 +160,10 @@ STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 #end what sam added
 
 #WhiteNoise Static Storage
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+#AWS static file storage 
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #Sendgrid Settings 
 SEND_GRID_API_KEY = config('API_KEY')
@@ -173,6 +180,32 @@ DEFAULT_TO_EMAIL = config('TO_EMAIL')
 ACCOUNT_EMAIL_SUBJECT_PREFIX = 'Contact Email Received from website'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #End Sendgrid Settings
+
+#sam added for AWS 'this causes errors' 
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
+
+
+#AWS Settings 
+
+
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+#AWS_S3_REGION_NAME = os.environ.get('REGION_NAME')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+DEFAULT_S3_PATH = "test_image"
+
+
+#Added these two test media ursl
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = 'https://{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
 
 
 #Tiny MCE Settings 
