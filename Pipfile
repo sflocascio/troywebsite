@@ -17,6 +17,9 @@ python-decouple = "*"
 "django-tinymce4-lite" = "*"
 django-el-pagination = "*"
 django-autoslug = "*"
+boto3 = "*"
+django-storages = "*"
+boto = "*"
 
 [dev-packages]
 
