@@ -20,6 +20,7 @@ django-autoslug = "*"
 boto3 = "*"
 django-storages = "*"
 boto = "*"
+requests = "*"
 
 [dev-packages]
 
